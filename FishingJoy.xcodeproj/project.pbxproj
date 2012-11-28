@@ -15,8 +15,6 @@
 		A97599E41665A892007A2DE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97599E31665A892007A2DE6 /* UIKit.framework */; };
 		A97599E61665A892007A2DE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97599E51665A892007A2DE6 /* Foundation.framework */; };
 		A97599E81665A892007A2DE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97599E71665A892007A2DE6 /* CoreGraphics.framework */; };
-		A97599EC1665A892007A2DE6 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = A97599EB1665A892007A2DE6 /* CloseNormal.png */; };
-		A97599EE1665A892007A2DE6 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = A97599ED1665A892007A2DE6 /* CloseSelected.png */; };
 		A97599F01665A892007A2DE6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A97599EF1665A892007A2DE6 /* Default.png */; };
 		A97599F21665A892007A2DE6 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = A97599F11665A892007A2DE6 /* HelloWorld.png */; };
 		A97599F41665A892007A2DE6 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = A97599F31665A892007A2DE6 /* Icon-72.png */; };
@@ -201,7 +199,11 @@
 		A9759C6B1665A895007A2DE6 /* CCTableViewCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9759C6A1665A895007A2DE6 /* CCTableViewCell.cpp */; };
 		A9759C6F1665A895007A2DE6 /* HttpClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9759C6E1665A895007A2DE6 /* HttpClient.cpp */; };
 		A9759C781665A895007A2DE6 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9759C771665A895007A2DE6 /* AppDelegate.cpp */; };
-		A9759C7B1665A895007A2DE6 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9759C7A1665A895007A2DE6 /* HelloWorldScene.cpp */; };
+		A994F93C1665F63400BF6F42 /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A994F93A1665F63400BF6F42 /* GameLayer.cpp */; };
+		A994F9401665FBE300BF6F42 /* Fish.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A994F93E1665FBE200BF6F42 /* Fish.cpp */; };
+		A994F9441666095E00BF6F42 /* fish.plist in Resources */ = {isa = PBXBuildFile; fileRef = A994F9431666095E00BF6F42 /* fish.plist */; };
+		A994F9461666097E00BF6F42 /* fish.png in Resources */ = {isa = PBXBuildFile; fileRef = A994F9451666097E00BF6F42 /* fish.png */; };
+		A994F94816660B7500BF6F42 /* bj01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A994F94716660B7500BF6F42 /* bj01.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -214,8 +216,6 @@
 		A97599E31665A892007A2DE6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A97599E51665A892007A2DE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A97599E71665A892007A2DE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		A97599EB1665A892007A2DE6 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CloseNormal.png; path = Resources/CloseNormal.png; sourceTree = "<group>"; };
-		A97599ED1665A892007A2DE6 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CloseSelected.png; path = Resources/CloseSelected.png; sourceTree = "<group>"; };
 		A97599EF1665A892007A2DE6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
 		A97599F11665A892007A2DE6 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HelloWorld.png; path = Resources/HelloWorld.png; sourceTree = "<group>"; };
 		A97599F31665A892007A2DE6 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = "<group>"; };
@@ -632,8 +632,14 @@
 		A9759C741665A895007A2DE6 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		A9759C761665A895007A2DE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		A9759C771665A895007A2DE6 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
-		A9759C791665A895007A2DE6 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
-		A9759C7A1665A895007A2DE6 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
+		A994F93A1665F63400BF6F42 /* GameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameLayer.cpp; sourceTree = "<group>"; };
+		A994F93B1665F63400BF6F42 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
+		A994F93E1665FBE200BF6F42 /* Fish.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fish.cpp; sourceTree = "<group>"; };
+		A994F93F1665FBE200BF6F42 /* Fish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fish.h; sourceTree = "<group>"; };
+		A994F941166602CE00BF6F42 /* GameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameConfig.h; path = Classes/GameConfig.h; sourceTree = "<group>"; };
+		A994F9431666095E00BF6F42 /* fish.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fish.plist; sourceTree = "<group>"; };
+		A994F9451666097E00BF6F42 /* fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fish.png; sourceTree = "<group>"; };
+		A994F94716660B7500BF6F42 /* bj01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bj01.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -703,8 +709,7 @@
 		A97599EA1665A892007A2DE6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A97599EB1665A892007A2DE6 /* CloseNormal.png */,
-				A97599ED1665A892007A2DE6 /* CloseSelected.png */,
+				A994F9421666095E00BF6F42 /* FishRes */,
 				A97599EF1665A892007A2DE6 /* Default.png */,
 				A97599F11665A892007A2DE6 /* HelloWorld.png */,
 				A97599F31665A892007A2DE6 /* Icon-72.png */,
@@ -1515,12 +1520,26 @@
 		A9759C751665A895007A2DE6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A994F941166602CE00BF6F42 /* GameConfig.h */,
 				A9759C761665A895007A2DE6 /* AppDelegate.h */,
 				A9759C771665A895007A2DE6 /* AppDelegate.cpp */,
-				A9759C791665A895007A2DE6 /* HelloWorldScene.h */,
-				A9759C7A1665A895007A2DE6 /* HelloWorldScene.cpp */,
+				A994F93B1665F63400BF6F42 /* GameLayer.h */,
+				A994F93A1665F63400BF6F42 /* GameLayer.cpp */,
+				A994F93F1665FBE200BF6F42 /* Fish.h */,
+				A994F93E1665FBE200BF6F42 /* Fish.cpp */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		A994F9421666095E00BF6F42 /* FishRes */ = {
+			isa = PBXGroup;
+			children = (
+				A994F94716660B7500BF6F42 /* bj01.jpg */,
+				A994F9451666097E00BF6F42 /* fish.png */,
+				A994F9431666095E00BF6F42 /* fish.plist */,
+			);
+			name = FishRes;
+			path = Resources/FishRes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1573,8 +1592,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A97599EC1665A892007A2DE6 /* CloseNormal.png in Resources */,
-				A97599EE1665A892007A2DE6 /* CloseSelected.png in Resources */,
 				A97599F01665A892007A2DE6 /* Default.png in Resources */,
 				A97599F21665A892007A2DE6 /* HelloWorld.png in Resources */,
 				A97599F41665A892007A2DE6 /* Icon-72.png in Resources */,
@@ -1585,6 +1602,9 @@
 				A97599FE1665A892007A2DE6 /* Icon@2x.png in Resources */,
 				A9759A001665A892007A2DE6 /* iTunesArtwork in Resources */,
 				A9759A921665A893007A2DE6 /* ChangeLog in Resources */,
+				A994F9441666095E00BF6F42 /* fish.plist in Resources */,
+				A994F9461666097E00BF6F42 /* fish.png in Resources */,
+				A994F94816660B7500BF6F42 /* bj01.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1768,7 +1788,8 @@
 				A9759C6B1665A895007A2DE6 /* CCTableViewCell.cpp in Sources */,
 				A9759C6F1665A895007A2DE6 /* HttpClient.cpp in Sources */,
 				A9759C781665A895007A2DE6 /* AppDelegate.cpp in Sources */,
-				A9759C7B1665A895007A2DE6 /* HelloWorldScene.cpp in Sources */,
+				A994F93C1665F63400BF6F42 /* GameLayer.cpp in Sources */,
+				A994F9401665FBE300BF6F42 /* Fish.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1904,6 +1925,7 @@
 				A9759C801665A895007A2DE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
