@@ -20,9 +20,15 @@ bool GameLayer::init()
         return false;
     }
     srand(time(NULL));
+    this->initFrames();
     this->initBackground();
     this->initFishes();
     return true;
+}
+
+void::GameLayer::initFrames()
+{
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("fish.plist");
 }
 
 void GameLayer::initBackground()
@@ -49,8 +55,8 @@ void GameLayer::initFishes()
     m_fishes->removeAllObjects();
     for(int i = 0; i < MAX_FISH_COUNT; i++)
     {
-        Fish *pFish = Fish::createWithFishType(1);
+        int type = rand() % 9 + 1;
+        Fish *pFish = Fish::createWithFishType(type, m_pFishesBatchNode);
         m_fishes->addObject(pFish);
-        m_pFishesBatchNode->addChild(pFish->m_pSprite);
     }
 }

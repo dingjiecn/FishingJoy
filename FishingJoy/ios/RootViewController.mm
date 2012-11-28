@@ -45,6 +45,7 @@
 #ifdef __IPHONE_6_0
     return UIInterfaceOrientationMaskLandscape;
 #endif
+    return 0;
 }
 
 - (BOOL) shouldAutorotate {

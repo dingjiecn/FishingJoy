@@ -17,9 +17,10 @@ class Fish : public cocos2d::CCObject
 public:
     int m_nFishType;
     cocos2d::CCSprite *m_pSprite;
-    static Fish *createWithFishType(int fishType);
+    cocos2d::CCSpriteBatchNode *m_pFishesBatchNode;
+    static Fish *createWithFishType(int fishType, cocos2d::CCSpriteBatchNode *pBatchNode);
 private:
-    bool initWithFishType(int fishType);
+    bool initWithFishType(int fishType, cocos2d::CCSpriteBatchNode *pBatchNode);
 
 };
 

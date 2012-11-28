@@ -28,6 +28,7 @@ public:
 private:
     void initFishes();
     void initBackground();
+    void initFrames();
     cocos2d::CCSpriteBatchNode *m_pFishesBatchNode;
     cocos2d::CCArray *m_fishes;
 };
