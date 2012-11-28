@@ -19,7 +19,7 @@ bool GameLayer::init()
     {
         return false;
     }
-
+    srand(time(NULL));
     this->initBackground();
     this->initFishes();
     return true;

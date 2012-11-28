@@ -38,6 +38,7 @@ bool Fish::initWithFishType(int fishType)
     }
     
     CCAnimation *animation = CCAnimation::createWithSpriteFrames(frames, 0.2f);
+    animation->setRestoreOriginalFrame(true);
     CCAnimate *animate = CCAnimate::create(animation);
     CCAction *swing = CCRepeatForever::create(animate);
     
