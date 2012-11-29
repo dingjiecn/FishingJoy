@@ -23,6 +23,7 @@ bool GameLayer::init()
     this->initFrames();
     this->initBackground();
     this->initFishes();
+    this->schedule(schedule_selector(GameLayer::updateGame), 0.05f);
     return true;
 }
 
@@ -43,20 +44,32 @@ void GameLayer::initBackground()
 
 void GameLayer::initFishes()
 {
-    if(m_fishes == NULL)
-    {
-        m_fishes = CCArray::createWithCapacity(MAX_FISH_COUNT);
-    }
+    this->setFishes(CCArray::createWithCapacity(MAX_FISH_COUNT));    
     
     CCTexture2D *texture = CCTextureCache::sharedTextureCache()->addImage("fish.png");
     m_pFishesBatchNode = CCSpriteBatchNode::createWithTexture(texture, MAX_FISH_COUNT);
     this->addChild(m_pFishesBatchNode);
     
-    m_fishes->removeAllObjects();
+    m_pFishes->removeAllObjects();
     for(int i = 0; i < MAX_FISH_COUNT; i++)
     {
         int type = rand() % 9 + 1;
-        Fish *pFish = Fish::createWithFishType(type, m_pFishesBatchNode);
-        m_fishes->addObject(pFish);
+        Fish::createWithFishType(type, this);
     }
+}
+
+void GameLayer::updateGame(CCTime dt)
+{
+    if(m_pFishes->count() < MAX_FISH_COUNT)
+    {
+        int n = MAX_FISH_COUNT - m_pFishes->count();
+        for(int i = 0; i < n; i++)
+        {
+            int type = rand() % 9 + 1;
+            Fish::createWithFishType(type, this);
+        }
+    }
+    
+    
+    
 }

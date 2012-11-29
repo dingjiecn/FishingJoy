@@ -24,13 +24,13 @@ public:
     
     // preprocessor macro for "static create()" constructor ( node() deprecated )
     CREATE_FUNC(GameLayer);
-    
+    CC_SYNTHESIZE(cocos2d::CCSpriteBatchNode *, m_pFishesBatchNode, FishesBatchNode);
+    CC_SYNTHESIZE_RETAIN(cocos2d::CCArray *, m_pFishes, Fishes);
 private:
     void initFishes();
     void initBackground();
     void initFrames();
-    cocos2d::CCSpriteBatchNode *m_pFishesBatchNode;
-    cocos2d::CCArray *m_fishes;
+    void updateGame(cocos2d::CCTime dt);
 };
 
 #endif /* defined(__FishingJoy__GameLayer__) */

@@ -39,7 +39,7 @@
 
 @implementation UIAccelerometer (Simulation)
 #pragma clang diagnostic push
-//#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
+#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 // override the static method and return our simulated version instead
 + (UIAccelerometer *)sharedAccelerometer
 {
