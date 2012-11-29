@@ -25,7 +25,7 @@ public:
 private:
     bool initWithFishType(int fishType, GameLayer *gameLayer);
     void removeSelf();
-    void getPathAndRotation(cocos2d::CCMoveTo *&moveto, float &rotation);
+    void getPath(cocos2d::CCMoveTo *&moveto);
 
 };
 

@@ -57,11 +57,8 @@ bool Fish::initWithFishType(int fishType, GameLayer *gameLayer)
     m_pSprite->setAnchorPoint(ccp(0.5f, 0.5f));
     
     CCMoveTo *moveto = NULL;
-    float rotation = 0.0f;
+    this->getPath(moveto);
 
-    this->getPathAndRotation(moveto, rotation);
-    m_pSprite->setRotation(rotation);
-    
     CCFiniteTimeAction *releaseFunc = CCCallFunc::create(this, callfunc_selector(Fish::removeSelf));
     CCFiniteTimeAction *sequence = CCSequence::create(moveto, releaseFunc, NULL);
     m_pSprite->runAction(sequence);
@@ -72,7 +69,7 @@ bool Fish::initWithFishType(int fishType, GameLayer *gameLayer)
     return true;
 }
 
-void Fish::getPathAndRotation(cocos2d::CCMoveTo *&moveto, float &rotation)
+void Fish::getPath(cocos2d::CCMoveTo *&moveto)
 {
     CCSize fishSize = m_pSprite->getContentSize();
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
@@ -107,10 +104,11 @@ void Fish::getPathAndRotation(cocos2d::CCMoveTo *&moveto, float &rotation)
             break;
     }
 
-    rotation = 180.0f - atan2f(ptEnd.y - ptStart.y, ptEnd.x - ptStart.x) * 180.0f / PI;
+    float rotation = 180.0f - atan2f(ptEnd.y - ptStart.y, ptEnd.x - ptStart.x) * 180.0f / PI;
     
     float duration = rand() % 10 + 4.0f;
     m_pSprite->setPosition(ptStart);
+    m_pSprite->setRotation(rotation);
     moveto = CCMoveTo::create(duration, ptEnd);
 }
 
