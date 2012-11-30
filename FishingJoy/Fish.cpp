@@ -56,7 +56,6 @@ bool Fish::initWithFishType(int fishType, GameLayer *gameLayer, CCSpriteBatchNod
     m_pSprite = CCSprite::createWithSpriteFrameName(originalFrameName->getCString());
     m_pSprite->runAction(swing);
     
-    m_pSprite->setScale(1.0f);
     m_pSprite->setAnchorPoint(ccp(0.5f, 0.5f));
     
     CCMoveTo *moveto = NULL;

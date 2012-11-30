@@ -27,6 +27,7 @@ bool GameLayer::init()
     this->initBackground();
     this->initFishes();
     this->schedule(schedule_selector(GameLayer::updateGame), 0.05f);
+    this->schedule(schedule_selector(GameLayer::updateFish), 1.0f);
     return true;
 }
 
@@ -45,6 +46,17 @@ void GameLayer::initBackground()
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
     pBackground->setPosition(ccp(winSize.width/2, winSize.height/2));
     this->addChild(pBackground);
+ 
+    texture = CCTextureCache::sharedTextureCache()->addImage("ui_box_01.png");
+    CCSprite *pTopBar = CCSprite::createWithTexture(texture);
+    pTopBar->setPosition(ccp(500, 700));
+    this->addChild(pTopBar, 100);
+    
+    texture = CCTextureCache::sharedTextureCache()->addImage("ui_box_02.png");
+    CCSprite *pBottomBar = CCSprite::createWithTexture(texture);
+    pBottomBar->setPosition(ccp(440, 90));
+    this->addChild(pBottomBar, 100);
+    
 }
 
 void GameLayer::initFishes()
@@ -73,10 +85,7 @@ void GameLayer::initFishes()
     }
     
     m_pFishes->removeAllObjects();
-    for(int i = 0; i < MAX_FISH_COUNT; i++)
-    {
-        this->addFish();
-    }
+
 }
 
 void GameLayer::addFish()
@@ -100,17 +109,21 @@ void GameLayer::addFish()
     }
 }
 
-void GameLayer::updateGame(CCTime dt)
+void GameLayer::updateFish(CCTime dt)
 {
     if(m_pFishes->count() < MAX_FISH_COUNT)
     {
         int n = MAX_FISH_COUNT - m_pFishes->count();
-        for(int i = 0; i < n; i++)
+        int nAdd = rand() % n + 1;
+        for(int i = 0; i < nAdd; i++)
         {
             this->addFish();
         }
     }
-    
-    
+}
+
+void GameLayer::updateGame(CCTime dt)
+{
+
     
 }

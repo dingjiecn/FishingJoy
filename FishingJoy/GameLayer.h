@@ -35,6 +35,7 @@ private:
     void initBackground();
     void initFrames();
     void updateGame(cocos2d::CCTime dt);
+    void updateFish(cocos2d::CCTime dt);
     void addFish();
 };
 

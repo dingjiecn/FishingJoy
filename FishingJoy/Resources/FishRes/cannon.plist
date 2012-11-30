@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>actor_cannon1_11.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{105, 180}, {76, 91}}</string>
+			<key>offset</key>
+			<string>{0, -3}</string>
+			<key>sourceColorRect</key>
+			<string>{{10, 12}, {76, 91}}</string>
+			<key>sourceSize</key>
+			<string>{96, 109}</string>
+		</dict>
+		<key>actor_cannon1_12.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{183, 188}, {76, 83}}</string>
+			<key>offset</key>
+			<string>{0, -3}</string>
+			<key>sourceColorRect</key>
+			<string>{{10, 16}, {76, 83}}</string>
+			<key>sourceSize</key>
+			<string>{96, 109}</string>
+		</dict>
+		<key>actor_cannon1_21.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{254, 95}, {76, 91}}</string>
+			<key>offset</key>
+			<string>{0, -3}</string>
+			<key>sourceColorRect</key>
+			<string>{{10, 12}, {76, 91}}</string>
+			<key>sourceSize</key>
+			<string>{96, 109}</string>
+		</dict>
+		<key>actor_cannon1_22.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{183, 273}, {76, 83}}</string>
+			<key>offset</key>
+			<string>{0, -3}</string>
+			<key>sourceColorRect</key>
+			<string>{{10, 16}, {76, 83}}</string>
+			<key>sourceSize</key>
+			<string>{96, 109}</string>
+		</dict>
+		<key>actor_cannon1_31.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{86, 390}, {82, 93}}</string>
+			<key>offset</key>
+			<string>{0, -2}</string>
+			<key>sourceColorRect</key>
+			<string>{{7, 10}, {82, 93}}</string>
+			<key>sourceSize</key>
+			<string>{96, 109}</string>
+		</dict>
+		<key>actor_cannon1_32.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{352, 2}, {82, 85}}</string>
+			<key>offset</key>
+			<string>{0, -3}</string>
+			<key>sourceColorRect</key>
+			<string>{{7, 15}, {82, 85}}</string>
+			<key>sourceSize</key>
+			<string>{96, 109}</string>
+		</dict>
+		<key>actor_cannon1_41.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{99, 280}, {82, 93}}</string>
+			<key>offset</key>
+			<string>{0, -2}</string>
+			<key>sourceColorRect</key>
+			<string>{{7, 10}, {82, 93}}</string>
+			<key>sourceSize</key>
+			<string>{96, 109}</string>
+		</dict>
+		<key>actor_cannon1_42.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{352, 89}, {82, 85}}</string>
+			<key>offset</key>
+			<string>{0, -3}</string>
+			<key>sourceColorRect</key>
+			<string>{{7, 15}, {82, 85}}</string>
+			<key>sourceSize</key>
+			<string>{96, 109}</string>
+		</dict>
+		<key>actor_cannon1_51.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{170, 375}, {82, 93}}</string>
+			<key>offset</key>
+			<string>{0, -3}</string>
+			<key>sourceColorRect</key>
+			<string>{{7, 11}, {82, 93}}</string>
+			<key>sourceSize</key>
+			<string>{96, 109}</string>
+		</dict>
+		<key>actor_cannon1_52.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{105, 2}, {82, 87}}</string>
+			<key>offset</key>
+			<string>{0, -3}</string>
+			<key>sourceColorRect</key>
+			<string>{{7, 14}, {82, 87}}</string>
+			<key>sourceSize</key>
+			<string>{96, 109}</string>
+		</dict>
+		<key>actor_cannon1_61.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 390}, {82, 95}}</string>
+			<key>offset</key>
+			<string>{0, -3}</string>
+			<key>sourceColorRect</key>
+			<string>{{7, 10}, {82, 95}}</string>
+			<key>sourceSize</key>
+			<string>{96, 109}</string>
+		</dict>
+		<key>actor_cannon1_62.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{105, 91}, {82, 87}}</string>
+			<key>offset</key>
+			<string>{0, -4}</string>
+			<key>sourceColorRect</key>
+			<string>{{7, 15}, {82, 87}}</string>
+			<key>sourceSize</key>
+			<string>{96, 109}</string>
+		</dict>
+		<key>actor_cannon1_71.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 280}, {95, 108}}</string>
+			<key>offset</key>
+			<string>{0, -0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {95, 108}}</string>
+			<key>sourceSize</key>
+			<string>{95, 108}</string>
+		</dict>
+		<key>actor_cannon1_72.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{254, 2}, {96, 91}}</string>
+			<key>offset</key>
+			<string>{0, -3}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 12}, {96, 91}}</string>
+			<key>sourceSize</key>
+			<string>{96, 109}</string>
+		</dict>
+		<key>actor_cannon_jiguang_01.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 2}, {101, 143}}</string>
+			<key>offset</key>
+			<string>{0, -0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {101, 143}}</string>
+			<key>sourceSize</key>
+			<string>{101, 143}</string>
+		</dict>
+		<key>actor_cannon_jiguang_02.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 147}, {101, 131}}</string>
+			<key>offset</key>
+			<string>{0, -6}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 12}, {101, 131}}</string>
+			<key>sourceSize</key>
+			<string>{101, 143}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>1</integer>
+		<key>size</key>
+		<string>{512, 512}</string>
+	</dict>
+</dict>
+</plist>

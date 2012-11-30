@@ -208,6 +208,10 @@
 		A994F9521668514D00BF6F42 /* fish2.png in Resources */ = {isa = PBXBuildFile; fileRef = A994F94E1668514D00BF6F42 /* fish2.png */; };
 		A994F9531668514D00BF6F42 /* fish3.plist in Resources */ = {isa = PBXBuildFile; fileRef = A994F94F1668514D00BF6F42 /* fish3.plist */; };
 		A994F9541668514D00BF6F42 /* fish3.png in Resources */ = {isa = PBXBuildFile; fileRef = A994F9501668514D00BF6F42 /* fish3.png */; };
+		A994F958166896F000BF6F42 /* ui_box_01.png in Resources */ = {isa = PBXBuildFile; fileRef = A994F956166896F000BF6F42 /* ui_box_01.png */; };
+		A994F959166896F000BF6F42 /* ui_box_02.png in Resources */ = {isa = PBXBuildFile; fileRef = A994F957166896F000BF6F42 /* ui_box_02.png */; };
+		A994F95C1668ADD500BF6F42 /* cannon.plist in Resources */ = {isa = PBXBuildFile; fileRef = A994F95A1668ADD400BF6F42 /* cannon.plist */; };
+		A994F95D1668ADD500BF6F42 /* cannon.png in Resources */ = {isa = PBXBuildFile; fileRef = A994F95B1668ADD400BF6F42 /* cannon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -648,6 +652,10 @@
 		A994F94E1668514D00BF6F42 /* fish2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fish2.png; sourceTree = "<group>"; };
 		A994F94F1668514D00BF6F42 /* fish3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fish3.plist; sourceTree = "<group>"; };
 		A994F9501668514D00BF6F42 /* fish3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fish3.png; sourceTree = "<group>"; };
+		A994F956166896F000BF6F42 /* ui_box_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ui_box_01.png; sourceTree = "<group>"; };
+		A994F957166896F000BF6F42 /* ui_box_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ui_box_02.png; sourceTree = "<group>"; };
+		A994F95A1668ADD400BF6F42 /* cannon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cannon.plist; sourceTree = "<group>"; };
+		A994F95B1668ADD400BF6F42 /* cannon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cannon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1542,6 +1550,10 @@
 		A994F9421666095E00BF6F42 /* FishRes */ = {
 			isa = PBXGroup;
 			children = (
+				A994F95A1668ADD400BF6F42 /* cannon.plist */,
+				A994F95B1668ADD400BF6F42 /* cannon.png */,
+				A994F956166896F000BF6F42 /* ui_box_01.png */,
+				A994F957166896F000BF6F42 /* ui_box_02.png */,
 				A994F94D1668514C00BF6F42 /* fish2.plist */,
 				A994F94E1668514D00BF6F42 /* fish2.png */,
 				A994F94F1668514D00BF6F42 /* fish3.plist */,
@@ -1621,6 +1633,10 @@
 				A994F9521668514D00BF6F42 /* fish2.png in Resources */,
 				A994F9531668514D00BF6F42 /* fish3.plist in Resources */,
 				A994F9541668514D00BF6F42 /* fish3.png in Resources */,
+				A994F958166896F000BF6F42 /* ui_box_01.png in Resources */,
+				A994F959166896F000BF6F42 /* ui_box_02.png in Resources */,
+				A994F95C1668ADD500BF6F42 /* cannon.plist in Resources */,
+				A994F95D1668ADD500BF6F42 /* cannon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
