@@ -18,12 +18,13 @@ class Fish : public cocos2d::CCObject
 {
 public:
     virtual ~Fish();
-    static Fish *createWithFishType(int fishType, GameLayer *gameLayer);
+    static Fish *createWithFishType(int fishType, GameLayer *gameLayer, cocos2d::CCSpriteBatchNode *pBatchNode);
     CC_SYNTHESIZE(GameLayer *, m_pGameLayer, GameLayer);
+    CC_SYNTHESIZE(cocos2d::CCSpriteBatchNode *, m_pBatchNode, BatchNode);
     CC_SYNTHESIZE(int, m_nFishType, FishType);
     CC_SYNTHESIZE(cocos2d::CCSprite *, m_pSprite, Sprite);
 private:
-    bool initWithFishType(int fishType, GameLayer *gameLayer);
+    bool initWithFishType(int fishType, GameLayer *gameLayer, cocos2d::CCSpriteBatchNode *pBatchNode);
     void removeSelf();
     void getPath(cocos2d::CCMoveTo *&moveto);
 

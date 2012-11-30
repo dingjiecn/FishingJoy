@@ -16,10 +16,10 @@ Fish::~Fish()
     CCLOG("destruct fish %d", m_nFishType);
 }
 
-Fish *Fish::createWithFishType(int fishType, GameLayer *gameLayer)
+Fish *Fish::createWithFishType(int fishType, GameLayer *gameLayer, CCSpriteBatchNode *pBatchNode)
 {
     Fish *fish = new Fish();
-    if(fish && fish->initWithFishType(fishType, gameLayer))
+    if(fish && fish->initWithFishType(fishType, gameLayer, pBatchNode))
     {
         fish->autorelease();
         return fish;
@@ -31,10 +31,13 @@ Fish *Fish::createWithFishType(int fishType, GameLayer *gameLayer)
     }
 }
 
-bool Fish::initWithFishType(int fishType, GameLayer *gameLayer)
+
+bool Fish::initWithFishType(int fishType, GameLayer *gameLayer, CCSpriteBatchNode *pBatchNode)
 {
+    
     this->setFishType(fishType);
     this->setGameLayer(gameLayer);
+    this->setBatchNode(pBatchNode);
     
     CCArray *frames = CCArray::create();
     for(int i = 1; i <= 10; i++)
@@ -64,7 +67,7 @@ bool Fish::initWithFishType(int fishType, GameLayer *gameLayer)
     m_pSprite->runAction(sequence);
     
     this->getGameLayer()->getFishes()->addObject(this);
-    this->getGameLayer()->getFishesBatchNode()->addChild(m_pSprite);
+    this->getBatchNode()->addChild(m_pSprite);
 
     return true;
 }

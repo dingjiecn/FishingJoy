@@ -5,6 +5,9 @@
 using namespace cocos2d;
 using namespace CocosDenshion;
 
+const int FishInBatchNode1[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 14};
+const int FishInBatchNode2[] = {10, 18};
+
 CCScene* GameLayer::scene()
 {
     CCScene *scene = CCScene::create();
@@ -30,6 +33,8 @@ bool GameLayer::init()
 void::GameLayer::initFrames()
 {
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("fish.plist");
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("fish2.plist");
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("fish3.plist");
 }
 
 void GameLayer::initBackground()
@@ -47,14 +52,51 @@ void GameLayer::initFishes()
     this->setFishes(CCArray::createWithCapacity(MAX_FISH_COUNT));    
     
     CCTexture2D *texture = CCTextureCache::sharedTextureCache()->addImage("fish.png");
-    m_pFishesBatchNode = CCSpriteBatchNode::createWithTexture(texture, MAX_FISH_COUNT);
-    this->addChild(m_pFishesBatchNode);
+    this->setBatchNode1(CCSpriteBatchNode::createWithTexture(texture));
+    this->addChild(m_pBatchNode1);
+    
+    texture = CCTextureCache::sharedTextureCache()->addImage("fish2.png");
+    this->setBatchNode2(CCSpriteBatchNode::createWithTexture(texture));
+    this->addChild(m_pBatchNode2);
+    
+    texture = CCTextureCache::sharedTextureCache()->addImage("fish3.png");
+    this->setBatchNode3(CCSpriteBatchNode::createWithTexture(texture));
+    this->addChild(m_pBatchNode3);
+
+    for(int i = 0; i < GET_ARRAY_LEN(FishInBatchNode1); i++)
+    {
+        fishInBatchNode1.insert(FishInBatchNode1[i]);
+    }
+    for(int i = 0; i < GET_ARRAY_LEN(FishInBatchNode2); i++)
+    {
+        fishInBatchNode2.insert(FishInBatchNode2[i]);
+    }
     
     m_pFishes->removeAllObjects();
     for(int i = 0; i < MAX_FISH_COUNT; i++)
     {
-        int type = rand() % 9 + 1;
-        Fish::createWithFishType(type, this);
+        this->addFish();
+    }
+}
+
+void GameLayer::addFish()
+{
+    while(1)
+    {
+        int type = rand() % 18 + 1;
+        std::set<int>::iterator it = fishInBatchNode1.find(type);
+        if(it != fishInBatchNode1.end())
+        {
+            Fish::createWithFishType(type, this, m_pBatchNode1);
+            return;
+        }
+     
+        it = fishInBatchNode2.find(type);
+        if(it != fishInBatchNode2.end())
+        {
+            Fish::createWithFishType(type, this, m_pBatchNode2);
+            return;
+        }
     }
 }
 
@@ -65,8 +107,7 @@ void GameLayer::updateGame(CCTime dt)
         int n = MAX_FISH_COUNT - m_pFishes->count();
         for(int i = 0; i < n; i++)
         {
-            int type = rand() % 9 + 1;
-            Fish::createWithFishType(type, this);
+            this->addFish();
         }
     }
     

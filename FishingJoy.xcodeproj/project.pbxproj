@@ -204,6 +204,10 @@
 		A994F9441666095E00BF6F42 /* fish.plist in Resources */ = {isa = PBXBuildFile; fileRef = A994F9431666095E00BF6F42 /* fish.plist */; };
 		A994F9461666097E00BF6F42 /* fish.png in Resources */ = {isa = PBXBuildFile; fileRef = A994F9451666097E00BF6F42 /* fish.png */; };
 		A994F94816660B7500BF6F42 /* bj01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A994F94716660B7500BF6F42 /* bj01.jpg */; };
+		A994F9511668514D00BF6F42 /* fish2.plist in Resources */ = {isa = PBXBuildFile; fileRef = A994F94D1668514C00BF6F42 /* fish2.plist */; };
+		A994F9521668514D00BF6F42 /* fish2.png in Resources */ = {isa = PBXBuildFile; fileRef = A994F94E1668514D00BF6F42 /* fish2.png */; };
+		A994F9531668514D00BF6F42 /* fish3.plist in Resources */ = {isa = PBXBuildFile; fileRef = A994F94F1668514D00BF6F42 /* fish3.plist */; };
+		A994F9541668514D00BF6F42 /* fish3.png in Resources */ = {isa = PBXBuildFile; fileRef = A994F9501668514D00BF6F42 /* fish3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -640,6 +644,10 @@
 		A994F9431666095E00BF6F42 /* fish.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fish.plist; sourceTree = "<group>"; };
 		A994F9451666097E00BF6F42 /* fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fish.png; sourceTree = "<group>"; };
 		A994F94716660B7500BF6F42 /* bj01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bj01.jpg; sourceTree = "<group>"; };
+		A994F94D1668514C00BF6F42 /* fish2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fish2.plist; sourceTree = "<group>"; };
+		A994F94E1668514D00BF6F42 /* fish2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fish2.png; sourceTree = "<group>"; };
+		A994F94F1668514D00BF6F42 /* fish3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fish3.plist; sourceTree = "<group>"; };
+		A994F9501668514D00BF6F42 /* fish3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fish3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1534,6 +1542,10 @@
 		A994F9421666095E00BF6F42 /* FishRes */ = {
 			isa = PBXGroup;
 			children = (
+				A994F94D1668514C00BF6F42 /* fish2.plist */,
+				A994F94E1668514D00BF6F42 /* fish2.png */,
+				A994F94F1668514D00BF6F42 /* fish3.plist */,
+				A994F9501668514D00BF6F42 /* fish3.png */,
 				A994F94716660B7500BF6F42 /* bj01.jpg */,
 				A994F9451666097E00BF6F42 /* fish.png */,
 				A994F9431666095E00BF6F42 /* fish.plist */,
@@ -1605,6 +1617,10 @@
 				A994F9441666095E00BF6F42 /* fish.plist in Resources */,
 				A994F9461666097E00BF6F42 /* fish.png in Resources */,
 				A994F94816660B7500BF6F42 /* bj01.jpg in Resources */,
+				A994F9511668514D00BF6F42 /* fish2.plist in Resources */,
+				A994F9521668514D00BF6F42 /* fish2.png in Resources */,
+				A994F9531668514D00BF6F42 /* fish3.plist in Resources */,
+				A994F9541668514D00BF6F42 /* fish3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

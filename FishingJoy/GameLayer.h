@@ -24,13 +24,18 @@ public:
     
     // preprocessor macro for "static create()" constructor ( node() deprecated )
     CREATE_FUNC(GameLayer);
-    CC_SYNTHESIZE(cocos2d::CCSpriteBatchNode *, m_pFishesBatchNode, FishesBatchNode);
+    CC_SYNTHESIZE(cocos2d::CCSpriteBatchNode *, m_pBatchNode1, BatchNode1);
+    CC_SYNTHESIZE(cocos2d::CCSpriteBatchNode *, m_pBatchNode2, BatchNode2);
+    CC_SYNTHESIZE(cocos2d::CCSpriteBatchNode *, m_pBatchNode3, BatchNode3);
     CC_SYNTHESIZE_RETAIN(cocos2d::CCArray *, m_pFishes, Fishes);
 private:
+    std::set<int> fishInBatchNode1;
+    std::set<int> fishInBatchNode2;
     void initFishes();
     void initBackground();
     void initFrames();
     void updateGame(cocos2d::CCTime dt);
+    void addFish();
 };
 
 #endif /* defined(__FishingJoy__GameLayer__) */
