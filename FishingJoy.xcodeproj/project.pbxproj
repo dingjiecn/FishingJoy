@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C08050D1668DBD700747DD5 /* Cannon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C08050C1668DBD700747DD5 /* Cannon.cpp */; };
+		6C0805101668DC2D00747DD5 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C08050F1668DC2D00747DD5 /* Bullet.cpp */; };
 		A97599DA1665A892007A2DE6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97599D91665A892007A2DE6 /* QuartzCore.framework */; };
 		A97599DC1665A892007A2DE6 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97599DB1665A892007A2DE6 /* OpenGLES.framework */; };
 		A97599DE1665A892007A2DE6 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97599DD1665A892007A2DE6 /* OpenAL.framework */; };
@@ -215,6 +217,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C08050B1668DBC200747DD5 /* Cannon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cannon.h; sourceTree = "<group>"; };
+		6C08050C1668DBD700747DD5 /* Cannon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cannon.cpp; sourceTree = "<group>"; };
+		6C08050E1668DC1800747DD5 /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
+		6C08050F1668DC2D00747DD5 /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
 		A97599D51665A892007A2DE6 /* FishingJoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FishingJoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A97599D91665A892007A2DE6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A97599DB1665A892007A2DE6 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1543,6 +1549,10 @@
 				A994F93A1665F63400BF6F42 /* GameLayer.cpp */,
 				A994F93F1665FBE200BF6F42 /* Fish.h */,
 				A994F93E1665FBE200BF6F42 /* Fish.cpp */,
+				6C08050B1668DBC200747DD5 /* Cannon.h */,
+				6C08050C1668DBD700747DD5 /* Cannon.cpp */,
+				6C08050E1668DC1800747DD5 /* Bullet.h */,
+				6C08050F1668DC2D00747DD5 /* Bullet.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1822,6 +1832,8 @@
 				A9759C781665A895007A2DE6 /* AppDelegate.cpp in Sources */,
 				A994F93C1665F63400BF6F42 /* GameLayer.cpp in Sources */,
 				A994F9401665FBE300BF6F42 /* Fish.cpp in Sources */,
+				6C08050D1668DBD700747DD5 /* Cannon.cpp in Sources */,
+				6C0805101668DC2D00747DD5 /* Bullet.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -106,7 +106,7 @@ void Fish::getPath(cocos2d::CCMoveTo *&moveto)
             break;
     }
 
-    float rotation = 180.0f - atan2f(ptEnd.y - ptStart.y, ptEnd.x - ptStart.x) * 180.0f / PI;
+    float rotation = 180.0f - atan2f(ptEnd.y - ptStart.y, ptEnd.x - ptStart.x) * 180.0f / M_PI;
     
     float duration = rand() % 10 + 4.0f;
     m_pSprite->setPosition(ptStart);

@@ -1,6 +1,7 @@
 #include "GameLayer.h"
 #include "SimpleAudioEngine.h"
 #include "Fish.h"
+#include "Cannon.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
@@ -23,9 +24,11 @@ bool GameLayer::init()
         return false;
     }
     srand(time(NULL));
+    this->setTouchEnabled(true);
     this->initFrames();
     this->initBackground();
     this->initFishes();
+    this->initCannon();
     this->schedule(schedule_selector(GameLayer::updateGame), 0.05f);
     this->schedule(schedule_selector(GameLayer::updateFish), 1.0f);
     return true;
@@ -36,6 +39,7 @@ void::GameLayer::initFrames()
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("fish.plist");
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("fish2.plist");
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("fish3.plist");
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("cannon.plist");
 }
 
 void GameLayer::initBackground()
@@ -88,6 +92,15 @@ void GameLayer::initFishes()
 
 }
 
+void GameLayer::initCannon()
+{
+    CCTexture2D *pTexture = CCTextureCache::sharedTextureCache()->addImage("cannon.png");
+    CCSpriteBatchNode *pBatchNode = CCSpriteBatchNode::createWithTexture(pTexture);
+    this->addChild(pBatchNode, 101);
+    this->setCannon(Cannon::createWithCannonType(7, pBatchNode));
+    m_pCannon->setRotation(0.0f);    
+}
+
 void GameLayer::addFish()
 {
     while(1)
@@ -119,6 +132,30 @@ void GameLayer::updateFish(CCTime dt)
         {
             this->addFish();
         }
+    }
+}
+
+void GameLayer::ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent)
+{
+ 	CCSetIterator it = pTouches->begin();
+	for(; it != pTouches->end(); it++)
+    {
+		CCTouch *pTouch = (CCTouch*)*it;
+		CCPoint pt = CCDirector::sharedDirector()->convertToGL(pTouch->getLocationInView());
+        m_pCannon->rotateToPoint(pt);
+        break;
+	}   
+}
+
+void GameLayer::ccTouchesEnded(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent)
+{
+    CCSetIterator it = pTouches->begin();
+    while(it != pTouches->end())
+    {
+        //CCTouch *pTouch = (CCTouch *)*it;
+        //CCPoint pt = CCDirector::sharedDirector()->convertToGL(pTouch->getLocationInView());
+        m_pCannon->fire();
+        break;
     }
 }
 

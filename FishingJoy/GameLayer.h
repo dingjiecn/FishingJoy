@@ -12,12 +12,15 @@
 #include <iostream>
 #include "cocos2d.h"
 #include "GameConfig.h"
+#include "Cannon.h"
 
 class GameLayer : public cocos2d::CCLayer
 {
 public:
     // Method 'init' in cocos2d-x returns bool, instead of 'id' in cocos2d-iphone (an object pointer)
     virtual bool init();
+    virtual void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
+    virtual void ccTouchesEnded(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
     
     // there's no 'id' in cpp, so we recommend to return the class instance pointer
     static cocos2d::CCScene* scene();
@@ -28,11 +31,13 @@ public:
     CC_SYNTHESIZE(cocos2d::CCSpriteBatchNode *, m_pBatchNode2, BatchNode2);
     CC_SYNTHESIZE(cocos2d::CCSpriteBatchNode *, m_pBatchNode3, BatchNode3);
     CC_SYNTHESIZE_RETAIN(cocos2d::CCArray *, m_pFishes, Fishes);
+    CC_SYNTHESIZE_RETAIN(Cannon *, m_pCannon, Cannon);
 private:
     std::set<int> fishInBatchNode1;
     std::set<int> fishInBatchNode2;
     void initFishes();
     void initBackground();
+    void initCannon();
     void initFrames();
     void updateGame(cocos2d::CCTime dt);
     void updateFish(cocos2d::CCTime dt);
