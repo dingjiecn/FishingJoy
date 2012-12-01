@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6C08050D1668DBD700747DD5 /* Cannon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C08050C1668DBD700747DD5 /* Cannon.cpp */; };
 		6C0805101668DC2D00747DD5 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C08050F1668DC2D00747DD5 /* Bullet.cpp */; };
+		6CAEFCFC166A1DFE00309A0F /* fish4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CAEFCFA166A1DFD00309A0F /* fish4.plist */; };
+		6CAEFCFD166A1DFE00309A0F /* fish4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAEFCFB166A1DFE00309A0F /* fish4.png */; };
 		A97599DA1665A892007A2DE6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97599D91665A892007A2DE6 /* QuartzCore.framework */; };
 		A97599DC1665A892007A2DE6 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97599DB1665A892007A2DE6 /* OpenGLES.framework */; };
 		A97599DE1665A892007A2DE6 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97599DD1665A892007A2DE6 /* OpenAL.framework */; };
@@ -221,6 +223,8 @@
 		6C08050C1668DBD700747DD5 /* Cannon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cannon.cpp; sourceTree = "<group>"; };
 		6C08050E1668DC1800747DD5 /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
 		6C08050F1668DC2D00747DD5 /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
+		6CAEFCFA166A1DFD00309A0F /* fish4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fish4.plist; sourceTree = "<group>"; };
+		6CAEFCFB166A1DFE00309A0F /* fish4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fish4.png; sourceTree = "<group>"; };
 		A97599D51665A892007A2DE6 /* FishingJoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FishingJoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A97599D91665A892007A2DE6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A97599DB1665A892007A2DE6 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1560,6 +1564,8 @@
 		A994F9421666095E00BF6F42 /* FishRes */ = {
 			isa = PBXGroup;
 			children = (
+				6CAEFCFA166A1DFD00309A0F /* fish4.plist */,
+				6CAEFCFB166A1DFE00309A0F /* fish4.png */,
 				A994F95A1668ADD400BF6F42 /* cannon.plist */,
 				A994F95B1668ADD400BF6F42 /* cannon.png */,
 				A994F956166896F000BF6F42 /* ui_box_01.png */,
@@ -1647,6 +1653,8 @@
 				A994F959166896F000BF6F42 /* ui_box_02.png in Resources */,
 				A994F95C1668ADD500BF6F42 /* cannon.plist in Resources */,
 				A994F95D1668ADD500BF6F42 /* cannon.png in Resources */,
+				6CAEFCFC166A1DFE00309A0F /* fish4.plist in Resources */,
+				6CAEFCFD166A1DFE00309A0F /* fish4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

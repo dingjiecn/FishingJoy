@@ -11,18 +11,21 @@
 
 #include "cocos2d.h"
 
+class GameLayer;
+
 class Cannon : public cocos2d::CCObject
 {
 public:
-    static Cannon *createWithCannonType(int cannonType, cocos2d::CCSpriteBatchNode *pBatchNode);
+    static Cannon *createWithCannonType(int cannonType, GameLayer *pGameLayer, cocos2d::CCSpriteBatchNode *pBatchNode);
     CC_SYNTHESIZE(int, m_nCannonType, CannonType);
-    //CC_SYNTHESIZE(cocos2d::CCSprite *, m_pSprite, Sprite);
+    CC_SYNTHESIZE(cocos2d::CCSprite *, m_pSprite, Sprite);
     CC_PROPERTY(float, m_fRotation, Rotation);
+    CC_SYNTHESIZE(GameLayer *, m_pGameLayer, GameLayer);
+    CC_SYNTHESIZE(cocos2d::CCPoint, m_ptDirection, Direction);
     void rotateToPoint(cocos2d::CCPoint pt);
     void fire();
-    cocos2d::CCSprite *m_pSprite;
 private:
-    bool initWithCannonType(int cannonType, cocos2d::CCSpriteBatchNode *pBatchNode);
+    bool initWithCannonType(int cannonType, GameLayer* pGameLayer, cocos2d::CCSpriteBatchNode *pBatchNode);
 };
 
 #endif

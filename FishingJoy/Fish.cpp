@@ -34,16 +34,18 @@ Fish *Fish::createWithFishType(int fishType, GameLayer *gameLayer, CCSpriteBatch
 
 bool Fish::initWithFishType(int fishType, GameLayer *gameLayer, CCSpriteBatchNode *pBatchNode)
 {
-    
+    m_bCaught = false;
     this->setFishType(fishType);
     this->setGameLayer(gameLayer);
     this->setBatchNode(pBatchNode);
     
     CCArray *frames = CCArray::create();
-    for(int i = 1; i <= 10; i++)
+    for(int i = 1; i <= 16; i++)
     {
         CCString *frameName = CCString::createWithFormat("fish%02d_%02d.png", fishType, i);
-        frames->addObject(CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(frameName->getCString()));
+        CCSpriteFrame *pFrame = CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(frameName->getCString());
+        if(pFrame)
+            frames->addObject(pFrame);
     }
     
     CCAnimation *animation = CCAnimation::createWithSpriteFrames(frames, 0.2f);
@@ -69,6 +71,26 @@ bool Fish::initWithFishType(int fishType, GameLayer *gameLayer, CCSpriteBatchNod
     this->getBatchNode()->addChild(m_pSprite);
 
     return true;
+}
+
+void Fish::showCaught()
+{
+    m_bCaught = true;
+    m_pSprite->stopAllActions();
+    
+    CCArray *frames = CCArray::createWithCapacity(11);
+    for(int i = 1; i <= 4; i++)
+    {
+        CCString *frameName = CCString::createWithFormat("fish%02d_catch_%02d.png", m_nFishType ,i);
+        CCSpriteFrame *pFrame = CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(frameName->getCString());
+        if(pFrame)
+            frames->addObject(pFrame);
+    }
+    CCAnimation *animation = CCAnimation::createWithSpriteFrames(frames, 0.3f);
+    CCAnimate *animate = CCAnimate::create(animation);
+    CCFiniteTimeAction *callFunc = CCCallFunc::create(this, callfunc_selector(Fish::removeSelf));
+    CCFiniteTimeAction *sequence = CCSequence::create(animate, callFunc, NULL);
+    m_pSprite->runAction(sequence);   
 }
 
 void Fish::getPath(cocos2d::CCMoveTo *&moveto)

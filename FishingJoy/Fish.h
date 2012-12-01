@@ -23,6 +23,8 @@ public:
     CC_SYNTHESIZE(cocos2d::CCSpriteBatchNode *, m_pBatchNode, BatchNode);
     CC_SYNTHESIZE(int, m_nFishType, FishType);
     CC_SYNTHESIZE(cocos2d::CCSprite *, m_pSprite, Sprite);
+    CC_SYNTHESIZE_READONLY(bool, m_bCaught, Caught);
+    void showCaught();
 private:
     bool initWithFishType(int fishType, GameLayer *gameLayer, cocos2d::CCSpriteBatchNode *pBatchNode);
     void removeSelf();

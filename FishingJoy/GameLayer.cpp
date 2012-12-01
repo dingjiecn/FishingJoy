@@ -2,12 +2,15 @@
 #include "SimpleAudioEngine.h"
 #include "Fish.h"
 #include "Cannon.h"
+#include "Bullet.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
 
 const int FishInBatchNode1[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 14};
 const int FishInBatchNode2[] = {10, 18};
+const int FishInBatchNode3[] = {};//{16, 17};
+const int FishInBatchNode4[] = {11, 12};
 
 CCScene* GameLayer::scene()
 {
@@ -31,6 +34,7 @@ bool GameLayer::init()
     this->initCannon();
     this->schedule(schedule_selector(GameLayer::updateGame), 0.05f);
     this->schedule(schedule_selector(GameLayer::updateFish), 1.0f);
+    this->setBullets(CCArray::create());
     return true;
 }
 
@@ -39,6 +43,7 @@ void::GameLayer::initFrames()
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("fish.plist");
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("fish2.plist");
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("fish3.plist");
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("fish4.plist");
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("cannon.plist");
 }
 
@@ -78,6 +83,10 @@ void GameLayer::initFishes()
     texture = CCTextureCache::sharedTextureCache()->addImage("fish3.png");
     this->setBatchNode3(CCSpriteBatchNode::createWithTexture(texture));
     this->addChild(m_pBatchNode3);
+    
+    texture = CCTextureCache::sharedTextureCache()->addImage("fish4.png");
+    this->setBatchNode4(CCSpriteBatchNode::createWithTexture(texture));
+    this->addChild(m_pBatchNode4);
 
     for(int i = 0; i < GET_ARRAY_LEN(FishInBatchNode1); i++)
     {
@@ -86,6 +95,14 @@ void GameLayer::initFishes()
     for(int i = 0; i < GET_ARRAY_LEN(FishInBatchNode2); i++)
     {
         fishInBatchNode2.insert(FishInBatchNode2[i]);
+    }
+    for(int i = 0; i < GET_ARRAY_LEN(FishInBatchNode3); i++)
+    {
+        fishInBatchNode3.insert(FishInBatchNode3[i]);
+    }
+    for(int i = 0; i < GET_ARRAY_LEN(FishInBatchNode4); i++)
+    {
+        fishInBatchNode4.insert(FishInBatchNode4[i]);
     }
     
     m_pFishes->removeAllObjects();
@@ -97,7 +114,7 @@ void GameLayer::initCannon()
     CCTexture2D *pTexture = CCTextureCache::sharedTextureCache()->addImage("cannon.png");
     CCSpriteBatchNode *pBatchNode = CCSpriteBatchNode::createWithTexture(pTexture);
     this->addChild(pBatchNode, 101);
-    this->setCannon(Cannon::createWithCannonType(7, pBatchNode));
+    this->setCannon(Cannon::createWithCannonType(7, this, pBatchNode));
     m_pCannon->setRotation(0.0f);    
 }
 
@@ -117,6 +134,20 @@ void GameLayer::addFish()
         if(it != fishInBatchNode2.end())
         {
             Fish::createWithFishType(type, this, m_pBatchNode2);
+            return;
+        }
+        
+        it = fishInBatchNode3.find(type);
+        if(it != fishInBatchNode3.end())
+        {
+            Fish::createWithFishType(type, this, m_pBatchNode3);
+            return;
+        }
+        
+        it = fishInBatchNode4.find(type);
+        if(it != fishInBatchNode4.end())
+        {
+            Fish::createWithFishType(type, this, m_pBatchNode4);
             return;
         }
     }
@@ -159,8 +190,43 @@ void GameLayer::ccTouchesEnded(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEven
     }
 }
 
+CCRect shrinkRect(CCRect rc, float xr, float yr)
+{
+    float w = rc.size.width * xr;
+    float h = rc.size.height * yr;
+    CCPoint pt = ccp(rc.origin.x + rc.size.width * (1.0f - xr) / 2, 
+                     rc.origin.y + rc.size.height * (1.0f - yr) / 2);
+    return CCRectMake(pt.x, pt.y, w, h);   
+}
+
 void GameLayer::updateGame(CCTime dt)
 {
-
-    
+    CCObject *pFishObj = NULL;
+    CCObject *pBulletObj = NULL;
+    CCARRAY_FOREACH(m_pBullets, pBulletObj)
+    {
+        Bullet *pBullet = (Bullet *)pBulletObj;
+        if(pBullet->getCaught())
+            continue;
+        bool caught = false;
+        CCARRAY_FOREACH(m_pFishes, pFishObj)
+        {
+            Fish *pFish = (Fish *)pFishObj;
+            if(pFish->getCaught())
+                continue;
+            
+            CCRect hittestRect = shrinkRect(pFish->getSprite()->boundingBox(), 1.0f, 0.5f);
+            
+            if(hittestRect.containsPoint(pBullet->getSpriteBullet()->getPosition()))
+            {
+                caught = true;
+                pFish->showCaught();
+            }
+        }
+        
+        if(caught)
+        {
+            pBullet->showNet();
+        }
+    }
 }

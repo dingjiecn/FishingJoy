@@ -30,11 +30,15 @@ public:
     CC_SYNTHESIZE(cocos2d::CCSpriteBatchNode *, m_pBatchNode1, BatchNode1);
     CC_SYNTHESIZE(cocos2d::CCSpriteBatchNode *, m_pBatchNode2, BatchNode2);
     CC_SYNTHESIZE(cocos2d::CCSpriteBatchNode *, m_pBatchNode3, BatchNode3);
+    CC_SYNTHESIZE(cocos2d::CCSpriteBatchNode *, m_pBatchNode4, BatchNode4);
     CC_SYNTHESIZE_RETAIN(cocos2d::CCArray *, m_pFishes, Fishes);
+    CC_SYNTHESIZE_RETAIN(cocos2d::CCArray *, m_pBullets, Bullets);
     CC_SYNTHESIZE_RETAIN(Cannon *, m_pCannon, Cannon);
 private:
     std::set<int> fishInBatchNode1;
     std::set<int> fishInBatchNode2;
+    std::set<int> fishInBatchNode3;
+    std::set<int> fishInBatchNode4;
     void initFishes();
     void initBackground();
     void initCannon();
