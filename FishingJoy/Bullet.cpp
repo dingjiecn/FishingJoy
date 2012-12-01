@@ -82,6 +82,13 @@ void Bullet::showNet()
     CCFiniteTimeAction *sequence = CCSequence::create(animate, callFunc, NULL);
     m_pSpriteNet->runAction(sequence);
     m_pSpriteNet->setPosition(m_pSpriteBullet->getPosition());
+    
+    
+    CCParticleSystem *particle = CCParticleSystemQuad::create("netparticle.plist");
+    particle->setPosition(m_pSpriteNet->getPosition());
+    particle->setPositionType(kCCPositionTypeFree);
+    particle->setAutoRemoveOnFinish(true);
+    m_pGameLayer->addChild(particle, 100);
   
 }
 

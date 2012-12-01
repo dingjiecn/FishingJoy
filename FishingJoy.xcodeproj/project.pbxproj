@@ -11,6 +11,9 @@
 		6C0805101668DC2D00747DD5 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C08050F1668DC2D00747DD5 /* Bullet.cpp */; };
 		6CAEFCFC166A1DFE00309A0F /* fish4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CAEFCFA166A1DFD00309A0F /* fish4.plist */; };
 		6CAEFCFD166A1DFE00309A0F /* fish4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAEFCFB166A1DFE00309A0F /* fish4.png */; };
+		6CAEFD00166A38A900309A0F /* particle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAEFCFE166A38A600309A0F /* particle.png */; };
+		6CAEFD01166A38A900309A0F /* particle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CAEFCFF166A38A700309A0F /* particle.plist */; };
+		6CAEFD09166A3BDC00309A0F /* netparticle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CAEFD08166A3BDB00309A0F /* netparticle.plist */; };
 		A97599DA1665A892007A2DE6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97599D91665A892007A2DE6 /* QuartzCore.framework */; };
 		A97599DC1665A892007A2DE6 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97599DB1665A892007A2DE6 /* OpenGLES.framework */; };
 		A97599DE1665A892007A2DE6 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97599DD1665A892007A2DE6 /* OpenAL.framework */; };
@@ -225,6 +228,9 @@
 		6C08050F1668DC2D00747DD5 /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
 		6CAEFCFA166A1DFD00309A0F /* fish4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fish4.plist; sourceTree = "<group>"; };
 		6CAEFCFB166A1DFE00309A0F /* fish4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fish4.png; sourceTree = "<group>"; };
+		6CAEFCFE166A38A600309A0F /* particle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particle.png; sourceTree = "<group>"; };
+		6CAEFCFF166A38A700309A0F /* particle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = particle.plist; sourceTree = "<group>"; };
+		6CAEFD08166A3BDB00309A0F /* netparticle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = netparticle.plist; sourceTree = "<group>"; };
 		A97599D51665A892007A2DE6 /* FishingJoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FishingJoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A97599D91665A892007A2DE6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A97599DB1665A892007A2DE6 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1564,6 +1570,9 @@
 		A994F9421666095E00BF6F42 /* FishRes */ = {
 			isa = PBXGroup;
 			children = (
+				6CAEFD08166A3BDB00309A0F /* netparticle.plist */,
+				6CAEFCFE166A38A600309A0F /* particle.png */,
+				6CAEFCFF166A38A700309A0F /* particle.plist */,
 				6CAEFCFA166A1DFD00309A0F /* fish4.plist */,
 				6CAEFCFB166A1DFE00309A0F /* fish4.png */,
 				A994F95A1668ADD400BF6F42 /* cannon.plist */,
@@ -1655,6 +1664,9 @@
 				A994F95D1668ADD500BF6F42 /* cannon.png in Resources */,
 				6CAEFCFC166A1DFE00309A0F /* fish4.plist in Resources */,
 				6CAEFCFD166A1DFE00309A0F /* fish4.png in Resources */,
+				6CAEFD00166A38A900309A0F /* particle.png in Resources */,
+				6CAEFD01166A38A900309A0F /* particle.plist in Resources */,
+				6CAEFD09166A3BDC00309A0F /* netparticle.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

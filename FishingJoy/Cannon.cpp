@@ -69,6 +69,7 @@ void Cannon::fire()
     CCFiniteTimeAction *pAction = CCAnimate::create(animation);
     m_pSprite->runAction(pAction);
     
-    Bullet *pBullet = Bullet::createWithBulletType(1, m_pGameLayer, m_pGameLayer->getBatchNode2(), m_pGameLayer->getBatchNode3());
+    int type = rand() % 7 + 1;
+    Bullet *pBullet = Bullet::createWithBulletType(type, m_pGameLayer, m_pGameLayer->getBatchNode2(), m_pGameLayer->getBatchNode3());
     pBullet->shootTo(m_ptDirection);
 }
