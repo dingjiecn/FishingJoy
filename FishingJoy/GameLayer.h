@@ -14,10 +14,13 @@
 #include "GameConfig.h"
 #include "Cannon.h"
 
+class RollNum;
+
 class GameLayer : public cocos2d::CCLayer
 {
 public:
     // Method 'init' in cocos2d-x returns bool, instead of 'id' in cocos2d-iphone (an object pointer)
+    virtual ~GameLayer();
     virtual bool init();
     virtual void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
     virtual void ccTouchesEnded(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
@@ -34,6 +37,7 @@ public:
     CC_SYNTHESIZE_RETAIN(cocos2d::CCArray *, m_pFishes, Fishes);
     CC_SYNTHESIZE_RETAIN(cocos2d::CCArray *, m_pBullets, Bullets);
     CC_SYNTHESIZE_RETAIN(Cannon *, m_pCannon, Cannon);
+    CC_SYNTHESIZE(RollNum *, m_pRollNum, RollNum);
 private:
     std::set<int> fishInBatchNode1;
     std::set<int> fishInBatchNode2;

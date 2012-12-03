@@ -3,6 +3,7 @@
 #include "Fish.h"
 #include "Cannon.h"
 #include "Bullet.h"
+#include "RollNum.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
@@ -18,6 +19,13 @@ CCScene* GameLayer::scene()
     GameLayer *layer = GameLayer::create();
     scene->addChild(layer);
     return scene;
+}
+
+GameLayer::~GameLayer()
+{
+    CC_SAFE_RELEASE(m_pFishes);
+    CC_SAFE_RELEASE(m_pBullets);
+    CC_SAFE_RELEASE(m_pCannon);
 }
 
 bool GameLayer::init()
@@ -65,6 +73,10 @@ void GameLayer::initBackground()
     CCSprite *pBottomBar = CCSprite::createWithTexture(texture);
     pBottomBar->setPosition(ccp(440, 90));
     this->addChild(pBottomBar, 100);
+    
+    this->setRollNum(RollNum::create());
+    this->addChild(this->getRollNum()->getSprite(), 100);
+    this->getRollNum()->getSprite()->setPosition(ccp(500, 500));
     
 }
 

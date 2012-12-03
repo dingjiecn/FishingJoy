@@ -14,6 +14,10 @@
 		6CAEFD00166A38A900309A0F /* particle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAEFCFE166A38A600309A0F /* particle.png */; };
 		6CAEFD01166A38A900309A0F /* particle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CAEFCFF166A38A700309A0F /* particle.plist */; };
 		6CAEFD09166A3BDC00309A0F /* netparticle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CAEFD08166A3BDB00309A0F /* netparticle.plist */; };
+		A9394056166C5F78004D452C /* bubble.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9394054166C5F78004D452C /* bubble.plist */; };
+		A9394057166C5F78004D452C /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = A9394055166C5F78004D452C /* bubble.png */; };
+		A939405B166C803E004D452C /* RollNum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9394059166C803E004D452C /* RollNum.cpp */; };
+		A939405D166CAA5E004D452C /* number.png in Resources */ = {isa = PBXBuildFile; fileRef = A939405C166CAA5E004D452C /* number.png */; };
 		A97599DA1665A892007A2DE6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97599D91665A892007A2DE6 /* QuartzCore.framework */; };
 		A97599DC1665A892007A2DE6 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97599DB1665A892007A2DE6 /* OpenGLES.framework */; };
 		A97599DE1665A892007A2DE6 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97599DD1665A892007A2DE6 /* OpenAL.framework */; };
@@ -231,6 +235,11 @@
 		6CAEFCFE166A38A600309A0F /* particle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particle.png; sourceTree = "<group>"; };
 		6CAEFCFF166A38A700309A0F /* particle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = particle.plist; sourceTree = "<group>"; };
 		6CAEFD08166A3BDB00309A0F /* netparticle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = netparticle.plist; sourceTree = "<group>"; };
+		A9394054166C5F78004D452C /* bubble.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bubble.plist; sourceTree = "<group>"; };
+		A9394055166C5F78004D452C /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
+		A9394059166C803E004D452C /* RollNum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RollNum.cpp; sourceTree = "<group>"; };
+		A939405A166C803E004D452C /* RollNum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollNum.h; sourceTree = "<group>"; };
+		A939405C166CAA5E004D452C /* number.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = number.png; sourceTree = "<group>"; };
 		A97599D51665A892007A2DE6 /* FishingJoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FishingJoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A97599D91665A892007A2DE6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A97599DB1665A892007A2DE6 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1563,6 +1572,8 @@
 				6C08050C1668DBD700747DD5 /* Cannon.cpp */,
 				6C08050E1668DC1800747DD5 /* Bullet.h */,
 				6C08050F1668DC2D00747DD5 /* Bullet.cpp */,
+				A939405A166C803E004D452C /* RollNum.h */,
+				A9394059166C803E004D452C /* RollNum.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1570,6 +1581,9 @@
 		A994F9421666095E00BF6F42 /* FishRes */ = {
 			isa = PBXGroup;
 			children = (
+				A939405C166CAA5E004D452C /* number.png */,
+				A9394054166C5F78004D452C /* bubble.plist */,
+				A9394055166C5F78004D452C /* bubble.png */,
 				6CAEFD08166A3BDB00309A0F /* netparticle.plist */,
 				6CAEFCFE166A38A600309A0F /* particle.png */,
 				6CAEFCFF166A38A700309A0F /* particle.plist */,
@@ -1667,6 +1681,9 @@
 				6CAEFD00166A38A900309A0F /* particle.png in Resources */,
 				6CAEFD01166A38A900309A0F /* particle.plist in Resources */,
 				6CAEFD09166A3BDC00309A0F /* netparticle.plist in Resources */,
+				A9394056166C5F78004D452C /* bubble.plist in Resources */,
+				A9394057166C5F78004D452C /* bubble.png in Resources */,
+				A939405D166CAA5E004D452C /* number.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1854,6 +1871,7 @@
 				A994F9401665FBE300BF6F42 /* Fish.cpp in Sources */,
 				6C08050D1668DBD700747DD5 /* Cannon.cpp in Sources */,
 				6C0805101668DC2D00747DD5 /* Bullet.cpp in Sources */,
+				A939405B166C803E004D452C /* RollNum.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

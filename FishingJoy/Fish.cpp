@@ -38,6 +38,10 @@ bool Fish::initWithFishType(int fishType, GameLayer *gameLayer, CCSpriteBatchNod
     this->setFishType(fishType);
     this->setGameLayer(gameLayer);
     this->setBatchNode(pBatchNode);
+    m_bParticleBubble = false;
+    
+    if(m_nFishType == 11 || m_nFishType == 12)  //mermaid
+        m_bParticleBubble = true;
     
     CCArray *frames = CCArray::create();
     for(int i = 1; i <= 16; i++)
@@ -90,7 +94,14 @@ void Fish::showCaught()
     CCAnimate *animate = CCAnimate::create(animation);
     CCFiniteTimeAction *callFunc = CCCallFunc::create(this, callfunc_selector(Fish::removeSelf));
     CCFiniteTimeAction *sequence = CCSequence::create(animate, callFunc, NULL);
-    m_pSprite->runAction(sequence);   
+    m_pSprite->runAction(sequence);
+    
+}
+
+void offsetPoint(CCPoint& pt, float offsetX, float offsetY)
+{
+    pt.x += offsetX;
+    pt.y += offsetY;
 }
 
 void Fish::getPath(cocos2d::CCMoveTo *&moveto)
@@ -128,16 +139,34 @@ void Fish::getPath(cocos2d::CCMoveTo *&moveto)
             break;
     }
 
-    float rotation = 180.0f - atan2f(ptEnd.y - ptStart.y, ptEnd.x - ptStart.x) * 180.0f / M_PI;
+    float angle = atan2f(ptEnd.y - ptStart.y, ptEnd.x - ptStart.x);
+    float rotation = 180.0f - angle * 180.0f / M_PI;
     
     float duration = rand() % 10 + 4.0f;
     m_pSprite->setPosition(ptStart);
     m_pSprite->setRotation(rotation);
     moveto = CCMoveTo::create(duration, ptEnd);
+    
+    if(m_bParticleBubble)
+    {
+        this->setParticleBubble(CCParticleSystemQuad::create("bubble.plist"));
+        m_pGameLayer->addChild(m_pParticleBubble);
+        float w = m_pSprite->getContentSize().width / 2.0f;
+        offsetPoint(ptStart, cosf(angle) * w, sinf(angle) * w);
+        m_pParticleBubble->setPosition(ptStart);
+        offsetPoint(ptEnd, cosf(angle) * w, sinf(angle) * w);
+        CCAction *act = CCMoveTo::create(moveto->getDuration(), ptEnd);
+        m_pParticleBubble->setAutoRemoveOnFinish(false);
+        m_pParticleBubble->setPositionType(kCCPositionTypeFree);
+        m_pParticleBubble->runAction(act);
+    }
+    
 }
 
 void Fish::removeSelf()
 {
     this->getGameLayer()->getFishes()->removeObject(this);
     m_pSprite->removeFromParentAndCleanup(true);
+    if(m_bParticleBubble && m_pParticleBubble)
+        m_pParticleBubble->removeFromParentAndCleanup(true);
 }

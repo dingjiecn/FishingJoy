@@ -86,7 +86,7 @@ void Bullet::showNet()
     
     CCParticleSystem *particle = CCParticleSystemQuad::create("netparticle.plist");
     particle->setPosition(m_pSpriteNet->getPosition());
-    particle->setPositionType(kCCPositionTypeFree);
+    particle->setPositionType(kCCPositionTypeGrouped);
     particle->setAutoRemoveOnFinish(true);
     m_pGameLayer->addChild(particle, 100);
   
