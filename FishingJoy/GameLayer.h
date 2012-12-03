@@ -13,8 +13,7 @@
 #include "cocos2d.h"
 #include "GameConfig.h"
 #include "Cannon.h"
-
-class RollNum;
+#include "RollNum.h"
 
 class GameLayer : public cocos2d::CCLayer
 {

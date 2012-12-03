@@ -75,8 +75,9 @@ void GameLayer::initBackground()
     this->addChild(pBottomBar, 100);
     
     this->setRollNum(RollNum::create());
-    this->addChild(this->getRollNum()->getSprite(), 100);
-    this->getRollNum()->getSprite()->setPosition(ccp(500, 500));
+    this->addChild(this->getRollNum(), 90);
+    this->getRollNum()->setPosition(ccp(500, 500));
+    m_pRollNum->setNumber(5, true);
     
 }
 
@@ -198,6 +199,7 @@ void GameLayer::ccTouchesEnded(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEven
         //CCTouch *pTouch = (CCTouch *)*it;
         //CCPoint pt = CCDirector::sharedDirector()->convertToGL(pTouch->getLocationInView());
         m_pCannon->fire();
+        m_pRollNum->setNumber(5, false);
         break;
     }
 }

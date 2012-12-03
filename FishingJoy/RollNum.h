@@ -12,18 +12,22 @@
 #include <iostream>
 #include "cocos2d.h"
 
-class RollNum : public cocos2d::CCObject
+class RollNum : public cocos2d::CCSprite
 {
 public:
     RollNum();
     virtual ~RollNum();
     CREATE_FUNC(RollNum);
-    CC_PROPERTY(int, m_nNumber, Number);
-    CC_SYNTHESIZE(cocos2d::CCSprite *, m_pSprite, Sprite);
     CC_SYNTHESIZE(bool, m_bUp, UpDirection);
-    CC_SYNTHESIZE(cocos2d::CCTexture2D *, m_pTexture, Texture);
+    void updateNumber(cocos2d::CCTime dt);
+    void setNumber(int var, bool bUp);
+    int getNumber();
 private:
     bool init();
+    int m_nNumber;
+    int m_nCurTexH;
+    int m_nEndTexH;
+    bool m_bRolling;
     
 };
 
