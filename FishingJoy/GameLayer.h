@@ -19,6 +19,7 @@ class GameLayer : public cocos2d::CCLayer
 {
 public:
     // Method 'init' in cocos2d-x returns bool, instead of 'id' in cocos2d-iphone (an object pointer)
+    GameLayer();
     virtual ~GameLayer();
     virtual bool init();
     virtual void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
@@ -36,12 +37,13 @@ public:
     CC_SYNTHESIZE_RETAIN(cocos2d::CCArray *, m_pFishes, Fishes);
     CC_SYNTHESIZE_RETAIN(cocos2d::CCArray *, m_pBullets, Bullets);
     CC_SYNTHESIZE_RETAIN(Cannon *, m_pCannon, Cannon);
-    CC_SYNTHESIZE(RollNum *, m_pRollNum, RollNum);
+    CC_SYNTHESIZE_RETAIN(RollNumGroup *, m_pRollNumGroup, RollNumGroup);
 private:
     std::set<int> fishInBatchNode1;
     std::set<int> fishInBatchNode2;
     std::set<int> fishInBatchNode3;
     std::set<int> fishInBatchNode4;
+    int m_nScore;
     void initFishes();
     void initBackground();
     void initCannon();

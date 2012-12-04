@@ -21,11 +21,17 @@ CCScene* GameLayer::scene()
     return scene;
 }
 
+GameLayer::GameLayer():m_pFishes(NULL), m_pBullets(NULL), m_pRollNumGroup(NULL), m_pCannon(NULL), m_nScore(0)
+{
+    
+}
+
 GameLayer::~GameLayer()
 {
     CC_SAFE_RELEASE(m_pFishes);
     CC_SAFE_RELEASE(m_pBullets);
     CC_SAFE_RELEASE(m_pCannon);
+    CC_SAFE_RELEASE(m_pRollNumGroup);
 }
 
 bool GameLayer::init()
@@ -74,11 +80,8 @@ void GameLayer::initBackground()
     pBottomBar->setPosition(ccp(440, 90));
     this->addChild(pBottomBar, 100);
     
-    this->setRollNum(RollNum::create());
-    this->addChild(this->getRollNum(), 90);
-    this->getRollNum()->setPosition(ccp(500, 500));
-    m_pRollNum->setNumber(5, true);
-    
+    this->setRollNumGroup(RollNumGroup::createWithGameLayer(this, 6));
+    m_pRollNumGroup->setPosition(ccp(353, 21));
 }
 
 void GameLayer::initFishes()
@@ -199,7 +202,6 @@ void GameLayer::ccTouchesEnded(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEven
         //CCTouch *pTouch = (CCTouch *)*it;
         //CCPoint pt = CCDirector::sharedDirector()->convertToGL(pTouch->getLocationInView());
         m_pCannon->fire();
-        m_pRollNum->setNumber(5, false);
         break;
     }
 }
@@ -235,6 +237,8 @@ void GameLayer::updateGame(CCTime dt)
             {
                 caught = true;
                 pFish->showCaught();
+                m_nScore += 125;
+                m_pRollNumGroup->setValue(m_nScore);
             }
         }
         
